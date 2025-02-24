@@ -1,0 +1,19 @@
+{
+    "name": "ColdPlay Concert Ticket",
+    "description": "Exclusive access to ColdPlay India Tour 2025",
+    "image": "ipfs://bafybeiduahdjrvyqhlvqot6j4wqg7xltvjxfeyi6begk5rudy7w3xif6mi/ticket.jpg",
+    "attributes": [
+      {
+        "trait_type": "Venue",
+        "value": "Narendra Modi Stadium Ahmedabad"
+      },
+      {
+        "trait_type": "Date",
+        "value": "2025-02-25"
+      },
+      {
+        "trait_type": "Seat",
+        "value": "VIP-12"
+      }
+    ]
+}

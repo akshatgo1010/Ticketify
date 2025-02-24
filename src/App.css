@@ -1,0 +1,389 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 4rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.event-grid, .ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.event-card, .ticket-card {
+  background: #d55454;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Add more styles as needed */
+/* Add these at the top */
+:root {
+  --primary: #667eea;
+  --primary-hover: #5a6fd1;
+  --secondary: #764ba2;
+  --background: #f8f9fa;
+  --text: #2d3748;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Global Styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Connect Button Styles */
+.connect-button {
+  background-color: #f7fafc;
+  transform: translateY(-1px);
+  color: var(--primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.connect-button:hover {
+  background-color: #f7fafc;
+  transform: translateY(-1px);
+}
+
+.connected-account {
+  background-color: white;
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.owner-badge {
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+/* Section Styling */
+section {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+section h2 {
+  color: #667eea;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.event-card {
+  background: linear-gradient(145deg, var(--card-bg), #f8f9fa);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* Ticket Cards */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.ticket-card {
+  background: linear-gradient(145deg, var(--card-bg), #f8f9fa);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* Buttons */
+.buy-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.buy-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Forms */
+.create-event-form {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: #667eea;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Loading Modal */
+.loading-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Improved Desktop Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 80px); /* Full viewport height minus header */
+}
+
+/* Card Content Alignment */
+.event-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure equal height */
+  min-height: 250px;
+}
+
+.event-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Form Layout Optimization */
+.create-event-form {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Better Button Placement */
+.buy-button {
+  margin-top: auto;
+}
+
+/* Metadata Viewer Improvements */
+.metadata-modal .modal-content {
+  max-width: 800px;
+  width: 60%;
+}
+
+.metadata-viewer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.image-container {
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Ticket Section Layout */
+.ticket-section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+/* Owner Controls */
+.owner-controls {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.owner-controls h2{
+  color: #667eea;
+}
+
+/* Add these new styles */
+.wide-container {
+  max-width: 100%;
+  padding: 0 4rem;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.submit-button {
+  background-color: #667eea;
+}
+
+/* Event Card Image Styling */
+.event-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+}
+
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+}
+
+/* Available Events Section Background */
+.available-events-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+}
